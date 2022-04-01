@@ -31,9 +31,6 @@ package Spring.Base;
 {$IMPLICITBUILD OFF}
 
 requires
-{$IFDEF FMX}
-  fmx,
-{$ENDIF}
   rtl;
 
 contains
