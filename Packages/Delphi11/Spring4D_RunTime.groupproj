@@ -18,9 +18,6 @@
         <Projects Include="Spring.Extensions.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Tests\Spring.Tests.Delphi11.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -74,23 +71,14 @@
     <Target Name="Spring_Extensions:Make">
         <MSBuild Projects="Spring.Extensions.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Spring_Tests_Delphi11">
-        <MSBuild Projects="..\..\Tests\Spring.Tests.Delphi11.dproj"/>
-    </Target>
-    <Target Name="Spring_Tests_Delphi11:Clean">
-        <MSBuild Projects="..\..\Tests\Spring.Tests.Delphi11.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Spring_Tests_Delphi11:Make">
-        <MSBuild Projects="..\..\Tests\Spring.Tests.Delphi11.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Spring_Base;Spring_Core;Spring_Data;Spring_Persistence;Spring_Extensions;Spring_Tests_Delphi11"/>
+        <CallTarget Targets="Spring_Base;Spring_Core;Spring_Data;Spring_Persistence;Spring_Extensions"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Spring_Base:Clean;Spring_Core:Clean;Spring_Data:Clean;Spring_Persistence:Clean;Spring_Extensions:Clean;Spring_Tests_Delphi11:Clean"/>
+        <CallTarget Targets="Spring_Base:Clean;Spring_Core:Clean;Spring_Data:Clean;Spring_Persistence:Clean;Spring_Extensions:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Spring_Base:Make;Spring_Core:Make;Spring_Data:Make;Spring_Persistence:Make;Spring_Extensions:Make;Spring_Tests_Delphi11:Make"/>
+        <CallTarget Targets="Spring_Base:Make;Spring_Core:Make;Spring_Data:Make;Spring_Persistence:Make;Spring_Extensions:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
