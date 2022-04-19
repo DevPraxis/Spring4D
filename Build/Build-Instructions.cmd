@@ -8,6 +8,7 @@ goto build
 
 :build
 
+call "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\rsvars.bat"
 call "C:\Program Files (x86)\Embarcadero\Studio\22.0\bin\rsvars.bat"
 
 MSBuild /t:%BuildTarget% /p:DCC_Hints=false;DCC_Warnings=false;config=%BuildConfig%;Platform=%TargetPlatform% "..\Packages\Delphi11\Spring4D_RunTime.groupproj"
